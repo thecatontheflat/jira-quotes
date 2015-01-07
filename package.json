@@ -9,6 +9,7 @@
     "atlassian-connect-express": "~1.0.1",
     "express": "~3.3.4",
     "express-hbs": "*",
+    "jugglingdb-mongodb": "0.0.4-4",
     "jugglingdb-sqlite3": "0.0.5",
     "static-expiry": ">=0.0.5"
   }
