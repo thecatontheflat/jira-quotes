@@ -1,0 +1,8 @@
+*.iml
+*.idea
+.DS_Store
+node_modules
+*.pem
+store.db
+private-key.pem
+public-key.pem

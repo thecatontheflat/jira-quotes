@@ -1,0 +1,48 @@
+{
+  "key": "quotes",
+  "name": "Quotes",
+  "description": "Funny and motivational quotes",
+  "vendor": {
+    "name": "Agile Values",
+    "url": "http://agile-values.com"
+  },
+  "baseUrl": "{{localBaseUrl}}",
+  "links": {
+    "self": "{{localBaseUrl}}/atlassian-connect.json",
+    "homepage": "{{localBaseUrl}}/atlassian-connect.json"
+  },
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed"
+  },
+  "scopes": [
+    "READ"
+  ],
+  "modules": {
+    "webPanels": [
+      {
+        "url": "/quote?issue={issue.key}",
+        "location": "atl.jira.view.issue.right.context",
+        "weight": 100,
+        "key": "quote",
+        "name": {
+          "value": "Quote of the day"
+        },
+        "conditions": [
+          {
+            "condition": "user_is_logged_in"
+          }
+        ],
+        "tooltip": {
+          "value": "Quote of the day"
+        },
+        "layout": {
+          "width": "100%",
+          "height": "100%"
+        }
+      }
+    ]
+  }
+}
