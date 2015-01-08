@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "atlassian-connect-express": "~1.0.1",
+    "excuses": "^1.0.0",
     "express": "~3.3.4",
     "express-hbs": "*",
     "jugglingdb-mongodb": "0.0.4-4",

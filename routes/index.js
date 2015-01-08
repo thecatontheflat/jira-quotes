@@ -1,9 +1,8 @@
-var excuses = require('../excuses.json');
+var excuses = require('excuses').developers;
 
 module.exports = function (app, addon) {
     app.get('/', function (req, res) {
         res.format({
-            // If the request content-type is text-html, it will decide which to serve up
             'text/html': function () {
                 res.redirect('/atlassian-connect.json');
             },
@@ -14,7 +13,7 @@ module.exports = function (app, addon) {
     });
 
     app.get('/quote', function (req, res) {
-            var quote = excuses.excuses[Math.floor(Math.random() * excuses.excuses.length)];
+            var quote = excuses.getRandom();
 
             res.render('quote', {
                 title: 'Atlassian Connect',
