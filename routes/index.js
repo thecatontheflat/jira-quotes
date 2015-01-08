@@ -1,5 +1,6 @@
-module.exports = function (app, addon) {
+var excuses = require('../excuses.json');
 
+module.exports = function (app, addon) {
     app.get('/', function (req, res) {
         res.format({
             // If the request content-type is text-html, it will decide which to serve up
@@ -12,11 +13,12 @@ module.exports = function (app, addon) {
         });
     });
 
-    //app.get('/quote', addon.authenticate(), function (req, res) {
     app.get('/quote', function (req, res) {
-            res.render('hello-world', {
-                title: 'Atlassian Connect'
-                //issueId: req.query('issueId')
+            var quote = excuses.excuses[Math.floor(Math.random() * excuses.excuses.length)];
+
+            res.render('quote', {
+                title: 'Atlassian Connect',
+                quote: quote
             });
         }
     );
